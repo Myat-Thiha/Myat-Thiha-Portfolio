@@ -213,6 +213,8 @@ img {
   bottom: 0;
   width: 260px;
 }
+
+
 .home__blob {
   fill: var(--first-color);
 }
@@ -257,9 +259,11 @@ img {
 }
 .skills__subtitle {
   margin-bottom: var(--mb-2);
+  text-align: center;
 }
 .skills__text {
   margin-bottom: var(--mb-4);
+  text-align: center;
 }
 .skills__data {
   display: flex;
@@ -291,8 +295,32 @@ img {
   align-items: center;
 }
 
-.skills__img {
-  border-radius: 0.5rem;
+/* Style for the Education Container */
+.education__container {
+  display: grid; /* Use grid layout for the container */
+  grid-template-columns: 1fr 1fr; /* Two columns layout */
+  gap: 20px; /* Add gap between grid items */
+}
+
+/* Style for the Education Text */
+.edu__text {
+  font-size: 18px; /* Set the font size */
+  line-height: 1.5; /* Set the line height */
+  color: #555; /* Set text color */
+}
+
+/* Style for the Education Image */
+.edu__img {
+  display: flex; /* Use flexbox for the image container */
+  align-items: center; /* Center the image vertically */
+}
+
+.edu__img img {
+  max-width: 100%; /* Ensure image does not exceed container width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Add border radius for rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+  margin-right: 20px; /* Add space between image and text */
 }
 
 /* ===== WORK =====*/
@@ -451,10 +479,9 @@ img {
     width: 300px;
   }
   .skills__container {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    align-items: center;
-    text-align: initial;
+    grid-template-columns: 0.7fr;
+    justify-content: center;
+    column-gap: 1rem;
   }
   .work__container {
     grid-template-columns: repeat(3, 1fr);
