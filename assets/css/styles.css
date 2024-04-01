@@ -365,6 +365,16 @@ img {
   align-items: center;
 }
 
+.skills__img {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+.skills__img img {
+  width: 300px;
+  border-radius: 0.5rem;
+}
+
 /* Styles for the Education Section */
 .Education.Section {
   padding: 50px 0;
@@ -555,10 +565,16 @@ p {
   margin-bottom: var(--mb-4);
 }
 .footer__icon {
+  width: max-content;
+  margin-bottom: var(--mb-2);
   font-size: 1.5rem;
-  color: #fff;
-  margin: 0 var(--mb-2);
+  color: grey;
 }
+
+.footer__icon:hover{
+  color: white;
+}
+
 .footer__copy {
   font-size: var(--smaller-font-size);
 }
