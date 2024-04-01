@@ -179,34 +179,56 @@ img {
 }
 
 /*===== HOME =====*/
+
 .home {
   position: relative;
   row-gap: 5rem;
   padding: 4rem 0 5rem;
 }
+
 .home__data {
   align-self: center;
 }
+
+@keyframes typing-animation {
+  from {
+    width: 0; /* Start with zero width */
+  }
+  to {
+    width: 100%; /* End with full width */
+    color: black; /* Change color to the desired color */
+  }
+}
+
 .home__title {
   font-size: var(--big-font-size);
   margin-bottom: var(--mb-5);
+  color: transparent; /* Set the color to transparent initially */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing content */
+  animation: typing-animation 3s steps(20, end) infinite; /* Animation settings */
 }
+
 .home__title-color {
   color: var(--first-color);
 }
+
 .home__social {
   display: flex;
   flex-direction: column;
 }
+
 .home__social-icon {
   width: max-content;
   margin-bottom: var(--mb-2);
   font-size: 1.5rem;
   color: var(--second-color);
 }
+
 .home__social-icon:hover {
   color: var(--first-color);
 }
+
 .home__img {
   position: absolute;
   right: 0;
@@ -214,12 +236,45 @@ img {
   width: 260px;
 }
 
-
 .home__blob {
   fill: var(--first-color);
 }
+
 .home__blob-img {
   width: 360px;
+}
+
+@media screen and (max-width: 576px) {
+  .home {
+    padding: 2rem 0; /* Adjusted padding for smaller screens */
+  }
+
+  .home__data {
+    text-align: center; /* Center align text for smaller screens */
+  }
+
+  .home__title {
+    font-size: calc(var(--big-font-size) - 6px); /* Decreased font size for smaller screens */
+    margin-bottom: var(--mb-3); /* Adjusted margin for smaller screens */
+  }
+
+  .home__social {
+    flex-direction: row; /* Change to horizontal layout for social icons on smaller screens */
+    justify-content: center; /* Center align social icons horizontally */
+  }
+
+  .home__social-icon {
+    margin-right: var(--mb-1); /* Adjusted margin for social icons on smaller screens */
+    font-size: 1.2rem; /* Decreased font size for social icons on smaller screens */
+  }
+
+  .home__img,
+  .home__blob-img {
+    display: block; /* Display the image and blob on smaller screens */
+    width: 100%; /* Set width to full for responsiveness */
+    margin-top: 1rem; /* Add margin to separate image from content */
+    position: static; /* Reset position to normal flow */
+  }
 }
 
 /*BUTTONS*/
@@ -295,33 +350,70 @@ img {
   align-items: center;
 }
 
-/* Style for the Education Container */
+/* Styles for the Education Section */
+.Education.Section {
+  padding: 50px 0;
+  background-color: #f8f9fa;
+}
+
 .education__container {
-  display: grid; /* Use grid layout for the container */
-  grid-template-columns: 1fr 1fr; /* Two columns layout */
-  gap: 20px; /* Add gap between grid items */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-/* Style for the Education Text */
-.edu__text {
-  font-size: 18px; /* Set the font size */
-  line-height: 1.5; /* Set the line height */
-  color: #555; /* Set text color */
+.box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 200px 1fr; /* Adjust the width of the image column as needed */
+  align-items: center; /* Align items vertically in the center */
 }
 
-/* Style for the Education Image */
-.edu__img {
-  display: flex; /* Use flexbox for the image container */
-  align-items: center; /* Center the image vertically */
+.image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.edu__img img {
-  max-width: 100%; /* Ensure image does not exceed container width */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Add border radius for rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
-  margin-right: 20px; /* Add space between image and text */
+.content {
+  padding: 20px;
 }
+
+h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 576px) {
+  .box {
+    grid-template-rows: auto auto; /* Two rows, first for image, second for content */
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
+  }
+
+  .content {
+    padding: 10px; /* Adjusted padding for smaller screens */
+  }
+
+  h3 {
+    font-size: 18px; /* Decreased font size for smaller screens */
+  }
+
+  p {
+    font-size: 14px; /* Decreased font size for smaller screens */
+  }
+}
+
 
 /* ===== WORK =====*/
 .work__container {
@@ -391,6 +483,7 @@ img {
   .home__img {
     width: 200px;
   }
+
 }
 @media screen and (min-width: 576px) {
   .home {
@@ -420,6 +513,7 @@ img {
     justify-content: center;
     column-gap: 1rem;
   }
+  
   .work__container {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;

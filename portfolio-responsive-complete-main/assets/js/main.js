@@ -55,3 +55,34 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Fetch the input values
+        const name = contactForm.elements['user_name'].value.trim();
+        const email = contactForm.elements['user_email'].value.trim();
+        const message = contactForm.elements['message'].value.trim();
+
+        // Perform form validation
+        if (name === '' || email === '' || message === '') {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        // Use EmailJS API to send email
+        emailjs.sendForm('contact_service', 'contact_form', contactForm)
+        .then(function(response) {
+            console.log('Email sent:', response);
+            alert('Message sent successfully!');
+            contactForm.reset(); // Reset the form after successful submission
+        }, function(error) {
+            console.error('Error sending email:', error);
+            alert('Error sending message. Please try again later.');
+        });
+    });
+});
+        
