@@ -8,12 +8,12 @@
   /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
   /* HSL color mode */
   --hue-color: 224;
-  --first-color: hsl(var(--hue-color), 89%, 60%);
+  --first-color: rgba(45, 45, 252, 0.83);
   --second-color: hsl(var(--hue-color), 56%, 12%);
   /*===== Fuente y tipografia =====*/
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
-  --h2-font-size: 1.25rem;
+  --h2-font-size: 1.5rem;
   --normal-font-size: .938rem;
   --smaller-font-size: .75rem;
   /*===== Margenes =====*/
@@ -74,7 +74,7 @@ img {
 .section-title {
   position: relative;
   font-size: var(--h2-font-size);
-  color: var(--first-color);
+  color: black;
   margin-top: var(--mb-2);
   margin-bottom: var(--mb-4);
   text-align: center;
@@ -88,7 +88,6 @@ img {
   right: 0;
   margin: auto;
   top: 2rem;
-  background-color: var(--first-color);
 }
 
 .section {
@@ -186,6 +185,10 @@ img {
   padding: 4rem 0 5rem;
 }
 
+.home__background{
+  background-color: #f8f9fa;
+}
+
 .home__data {
   align-self: center;
 }
@@ -210,7 +213,7 @@ img {
 }
 
 .home__title-color {
-  color: var(--first-color);
+  color: rgb(242, 159, 6);
 }
 
 .home__social {
@@ -226,7 +229,7 @@ img {
 }
 
 .home__social-icon:hover {
-  color: var(--first-color);
+  color: rgb(242, 159, 6);
 }
 
 .home__img {
@@ -234,6 +237,10 @@ img {
   right: 0;
   bottom: 0;
   width: 260px;
+}
+
+.home__img img{
+  border-radius: 0.5rem;
 }
 
 .home__blob {
@@ -257,7 +264,7 @@ img {
     font-size: calc(var(--big-font-size) - 6px); /* Decreased font size for smaller screens */
     margin-bottom: var(--mb-3); /* Adjusted margin for smaller screens */
   }
-
+  
   .home__social {
     flex-direction: row; /* Change to horizontal layout for social icons on smaller screens */
     justify-content: center; /* Center align social icons horizontally */
@@ -280,7 +287,7 @@ img {
 /*BUTTONS*/
 .button {
   display: inline-block;
-  background-color: var(--first-color);
+  background-color: rgb(41, 39, 39);
   color: #fff;
   padding: 0.75rem 2.5rem;
   font-weight: var(--font-semi);
@@ -298,6 +305,7 @@ img {
 }
 .about__subtitle {
   margin-bottom: var(--mb-2);
+  font-size: 1.25rem;
 }
 .about__img {
   justify-self: center;
@@ -310,7 +318,7 @@ img {
 .about__resume-link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #2b2c2e;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -319,7 +327,7 @@ img {
 }
 
 .about__resume-link:hover {
-  background-color: #0056b3;
+  background-color: #383a3ccb;
 }
 
 /* ===== SKILLS =====*/
@@ -330,6 +338,8 @@ img {
 .skills__subtitle {
   margin-bottom: var(--mb-2);
   text-align: center;
+  font-size: 1.25rem;
+  color: rgb(91, 88, 88);
 }
 .skills__text {
   margin-bottom: var(--mb-4);
@@ -350,15 +360,15 @@ img {
 
 .skills__data:hover
 {
-  background-color: black;
+  background-color: rgb(71, 67, 67);
   color:#fff;
-  box-shadow: 0px 4px 25px rgba(245, 249, 0, 0.8);
+  box-shadow: 0px 4px 25px rgba(252, 181, 2, 0.8);
 }
 
 .skills__icon {
   font-size: 2rem;
   margin-right: var(--mb-2);
-  color: var(--first-color);
+  color: rgb(37, 35, 35);
 }
 .skills__names {
   display: flex;
@@ -442,6 +452,9 @@ p {
 
 /* ===== WORK =====*/
 
+.work__background{
+  background-color: #f8f9fa;
+}
 .work__container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width as needed */
